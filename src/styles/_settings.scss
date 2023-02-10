@@ -1,0 +1,35 @@
+$colorPrimary: #b80808;
+$colorTxt: #969BA1;
+$colorBack: #202124;
+$colorBackSecond: #303134;
+$colorBorder: #3c4043;
+$white: #fff;
+
+html {
+  scroll-behavior: smooth;
+  background: $colorBack;
+}
+main {
+  min-height: 35vh;
+  background: $colorBackSecond;
+  padding: 1em 0;
+}
+h1, h2 {
+  color: $colorTxt;
+}
+a {
+  text-decoration: none;
+}
+.btn-global {
+  background: $colorBackSecond;
+  color: $white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+    a{
+      color: $white;
+    }
+    &:hover {
+        background: $colorPrimary;
+    }
+}

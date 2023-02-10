@@ -1,0 +1,23 @@
+.card-books {
+    background: $colorBack;
+    color: $colorTxt;
+    padding: 1em;
+    border-radius: 8px;
+
+    .img-book {   
+        border-color: $colorTxt;
+        background: none;
+        width: 200px;
+    }
+    .card-books-title {
+        font-size: 1.1rem;
+    }
+    .card-books-author {
+        font-size: 1rem;;
+    }
+    .chevron {
+        font-size: 1.4rem;
+        color: $colorPrimary;
+    }
+}
+    

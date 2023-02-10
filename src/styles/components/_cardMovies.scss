@@ -1,0 +1,48 @@
+.container-card-movies {
+    padding: 0.3em;
+}
+.card-movies {
+    background: $colorBack;
+    color: $colorTxt;
+    padding: 1em;
+    border-radius: 8px;
+
+        .img-movie {   
+            border-color: $colorTxt;
+            background: none;
+        }
+        .card-title {
+            font-size: 1.1rem;
+            padding-top: 0.5em;
+            min-height: 8vh;
+        }
+        .btn-open {
+            padding: 0;
+            background: $colorBackSecond;
+            i {
+                font-size: 1.4rem;
+                color: $colorPrimary;
+            }
+        }
+        .chevron {
+             &:hover {
+                transform: scale(1.2);
+            }
+        }
+        .container-movie-genre {
+            list-style-type: none;
+                div {
+                    background: $colorBackSecond;
+                    padding: 5px 15px;
+                    font-size: 0.8rem;
+                    border-radius: 8px;
+                }
+        }
+
+}
+
+@media(min-width: 768px) {
+    .card-title {
+        min-height: 15vh;
+    }
+}

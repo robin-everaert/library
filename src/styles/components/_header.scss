@@ -1,0 +1,55 @@
+header, .header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+  }
+header {
+  background: $colorBack;
+  margin: 0;  
+}
+.header-top {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: $colorTxt;
+  padding: 2em 0;
+  background: $colorBack;
+
+    .container-img {
+      display: flex;
+    }
+    img {
+      width: 5em;
+      margin: 0.5em 1.5em;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 10px;
+    }
+    h2 {
+      font-size: 1.6rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+    .btn-nav {
+      width: 7em;
+      background: $colorBackSecond;
+      margin: 8px;
+      padding: 3px 0;
+      color: $white;
+      &:hover {
+        background: $colorPrimary;
+      }
+    }     
+} 
+
+@media (min-width: 768px) {
+  .btn-nav {
+    width: 10em;  
+  }
+}
+  
+  
