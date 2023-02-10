@@ -8,6 +8,7 @@ import FetchBooksView from './features/fetchBooks/FetchBooksView';
 import LibraryView from './features/library/LibraryView';
 import { getLocalStorageMovie as getLocalStorageMovieAction,
          getLocalStorageBook as getLocalStorageBookAction } from './features/library/librarySlice';
+import Home from './components/Home';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -25,7 +26,8 @@ const App = () => {
     <Router>
       <Header />
         <Routes>
-          <Route path="/" element={ <FetchMoviesView /> } />
+          <Route path='/' element={ <Home /> } />
+          <Route path="/movies" element={ <FetchMoviesView /> } />
           <Route path="books" element={ <FetchBooksView /> } />
           <Route path="/lib" element={ <LibraryView /> } />
         </Routes>
