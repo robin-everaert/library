@@ -2,7 +2,7 @@
   "name": "library",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://robin.everaert.github.io/library",
+  "homepage": "https://robin.everaert.github.io/library/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
