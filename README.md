@@ -20,7 +20,6 @@ https://robin-everaert.github.io/library/
 * Url documentation: https://developers.google.com/books#:~:text=Google%20Books%20is%20our%20effort,also%20manage%20your%20personal%20bookshelves.
 * Books data: https://www.googleapis.com/books/v1/volumes?q=javascript&maxResults=20
 * Stockage des données: LocaleStorage -> bookData
-### Livres: 
 
 ### Librairies utilisées :
 * React: react V18.2.0 / react-redux V8.0.5 
