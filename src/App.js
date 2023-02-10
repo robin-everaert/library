@@ -28,6 +28,7 @@ const App = () => {
       <Header />
         <Routes>
           <Route path='/' element={ <Home /> } />
+          <Route path='/library' element={ <Home /> } />
           <Route path="/movies" element={ <FetchMoviesView /> } />
           <Route path="books" element={ <FetchBooksView /> } />
           <Route path="/lib" element={ <LibraryView /> } />
