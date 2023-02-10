@@ -13,7 +13,7 @@ https://robin-everaert.github.io/library/
 ### Films:
 * Name : The Movies Db
 * Url documentation: https://developers.themoviedb.org/3/getting-started/introduction
-* Movies data: `[https://api.coingecko.com/api/v3/global](https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=marvel&language=fr-FR)`
+* Movies data: https://api.coingecko.com/api/v3/global](https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=marvel&language=fr-FR
 * * Stockage des données: LocaleStorage -> movieData
 * ### Livres:
 * Name : The Movies Db
