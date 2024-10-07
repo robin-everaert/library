@@ -11,7 +11,7 @@ const Header = () => {
             <h1>LIBRARY</h1>
             <h2>React - Redux Toolkit</h2>
             <NavBar />
-        </div>         
+        </div>
     );
 };
 

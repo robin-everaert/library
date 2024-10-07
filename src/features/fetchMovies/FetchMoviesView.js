@@ -17,7 +17,7 @@ const FetchMoviesView = () => {
     return (
         <main className='main main-view'>
             <div className="container">
-                <h1 className='text-center pb-3'>Films</h1>
+                <h1 className='text-center pb-3'>Movies</h1>
                 <div className="row">
                     <div className="col-12 d-flex justify-content-center">
                         <div>
@@ -26,7 +26,7 @@ const FetchMoviesView = () => {
                                 value={ titleMovie }
                                 className="input-search"
                                 onChange={ handleChange }
-                                placeholder="Rechercher un film"
+                                placeholder="Search for a movie"
                             />
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const FetchMoviesView = () => {
                 { moviesSliceData.isLoading ?
                 <SpinnerLoading /> : 
                 moviesSliceData.error !== '' ? 
-                    <p className="w-100 text-center msg-error mt-5">Aucun film ne correspond à votre recherche</p> :
+                    <p className="w-100 text-center msg-error mt-5">No movies match your search</p> :
                     <div className="row container-view-movies mt-3">
                         <CardMovies moviesArray={ moviesSliceData.fetchedMovies } />    
                     </div> }

@@ -16,14 +16,16 @@ const ListBooks = () => {
                 >
                     <div>
                         <span className='d-block'>
-                        { l.title ?
-                            "Titre:" + l.title :
-                            "Titre inconnu" }        
+                        { l.title ? l.title : "Unknown title" }
                         </span> 
                         <span className='d-block mt-2'>
-                        { l.author ?
-                            "Auteur: " + l.author :
-                            "Auteur Inconnu" }
+                        {l.author ? (
+                            <span>
+                                <span className="titled">By:</span> {l.author}
+                            </span>
+                        ) : (
+                            "Unknown author"
+                        )}
                         </span>
                     </div>
                     <button
@@ -33,7 +35,7 @@ const ListBooks = () => {
                     </button>   
                 </li>
             )) :
-            <li className='list-group-item d-flex justify-content-between align-items-center'>Aucun livre dans la médiathèque</li>
+            <li className='list-group-item d-flex justify-content-between align-items-center'>No books in the library</li>
         }   
         </ul>
     );

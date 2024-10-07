@@ -10,7 +10,7 @@ const initialState = {
 export const fetchBooks = createAsyncThunk(
     'books/fetchBooks',
     async arg => {
-       const { data } = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${arg}&maxResults=20`)
+       const { data } = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${arg}&maxResults=20&langRestrict=en`)
        return data.items
     }
 );

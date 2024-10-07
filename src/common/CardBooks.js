@@ -46,14 +46,18 @@ const CardBooks = ({ booksArray }) => {
             { book.volumeInfo.subtitle &&
               <h3 className='card-books-title'>{ book.volumeInfo.subtitle }</h3> }
             <h4 className="card-books-author mb-2">
-            { book.volumeInfo.authors ?
-              "Par: " + book.volumeInfo.authors :
-              "Auteur inconnu" }
+              {book.volumeInfo.authors ? (
+                <span>
+                  <span className="titled">By:</span> {book.volumeInfo.authors}
+                </span>
+              ) : (
+                "Unknown author"
+              )}
             </h4>
             <p>
             { book.volumeInfo.publishedDate ?
-              "Année de publication: " + dateFormaterBooks(book.volumeInfo.publishedDate) :
-              "Année de publication inconnue" }
+              dateFormaterBooks(book.volumeInfo.publishedDate) :
+              "Unknown publication year" }
             </p>           
           </div>
           <i className="fa-sharp fa-solid fa-chevron-down text-center chevron pt-1 pb-1" id={ `chevron${book.volumeInfo.id}` }></i>
@@ -64,29 +68,29 @@ const CardBooks = ({ booksArray }) => {
           src={ book.volumeInfo.hasOwnProperty('imageLinks') ?
             book.volumeInfo.imageLinks.thumbnail :
             "./img/no-cover-book.jpg" } 
-          alt={ "L'affiche de " + book.volumeInfo.title }
+          alt={ "Poster of " + book.volumeInfo.title }
           className="img-book img-thumbnail lazy" 
           /> 
           <p className="mt-3">
           { book.volumeInfo.description ?
             book.volumeInfo.description :
-            "Aucune description" }
+            "Unknown description" }
           </p>
           { book.volumeInfo.previewLink ? 
             <button 
             className="btn-global"
             >
-            <a href={book.volumeInfo.previewLink} target="_blank">Voir plus</a>
+            <a href={book.volumeInfo.previewLink} target="_blank">See more</a>
             </button> :
-            <span className="btn-global">Lien inconnu</span> }
+            <span className="btn-global">Unknown link</span> }
           <div className="d-flex justify-content-start mt-3">
           { !handleIsDisabledBooks(book.id) ?
             <button 
             className="btn-global btn-add"
             onClick={ () => handleSaveBook(book.id, book.volumeInfo.title, book.volumeInfo.authors) }
-            >Ajouter à la médiathèque
+            >Add to library
             </button> :
-            <span className="span-already-record">Livre déja enregistré</span> }
+            <span className="span-already-record">Book already saved</span> }
           </div>     
         </div>
     </div>

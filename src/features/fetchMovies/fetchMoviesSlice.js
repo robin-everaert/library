@@ -10,7 +10,7 @@ const initialState = {
 export const fetchMovies = createAsyncThunk(
     'movies/fetchMovies',
     async arg => {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${arg}&language=fr-FR`)
+        const { data } = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${arg}&language=en-EN`)
         return data.results;
     }
 );

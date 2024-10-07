@@ -13,72 +13,74 @@ const CardMovies = ({ moviesArray }) => {
 
   const dateFormaterMovies = (date) => {
     let [yy, mm, dd] = date.split("-");
-    return [dd, mm, yy].join("/");
+    return [mm, dd, yy].join("/");
   };
+  
   const genreFinder = (m) => {
     let genreArray = [];
     for (let i = 0; i < m.genre_ids.length; i++) {
       switch (m.genre_ids[i]) {
-        case 28:
-          genreArray.push(`Action`);
-          break;
-        case 12:
-          genreArray.push(`Aventure`);
-          break;
-        case 16:
-          genreArray.push(`Animation`);
-          break;
-        case 35:
-          genreArray.push(`Comédie`);
-          break;
-        case 80:
-          genreArray.push(`Policier`);
-          break;
-        case 99:
-          genreArray.push(`Documentaire`);
-          break;
-        case 18:
-          genreArray.push(`Drame`);
-          break;
-        case 10751:
-          genreArray.push(`Famille`);
-          break;
-        case 14:
-          genreArray.push(`Fantasy`);
-          break;
-        case 36:
-          genreArray.push(`Histoire`);
-          break;
-        case 27:
-          genreArray.push(`Horreur`);
-          break;
-        case 10402:
-          genreArray.push(`Musique`);
-          break;
-        case 9648:
-          genreArray.push(`Mystère`);
-          break;
-        case 10749:
-          genreArray.push(`Romance`);
-          break;
-        case 878:
-          genreArray.push(`Science-fiction`);
-          break;
-        case 10770:
-          genreArray.push(`Téléfilm`);
-          break;
-        case 53:
-          genreArray.push(`Thriller`);
-          break;
-        case 10752:
-          genreArray.push(`Guerre`);
-          break;
-        case 37:
-          genreArray.push(`Western`);
-          break;
-        default:
-          break;
-      }
+    case 28:
+      genreArray.push(`Action`);
+      break;
+    case 12:
+      genreArray.push(`Adventure`);
+      break;
+    case 16:
+      genreArray.push(`Animation`);
+      break;
+    case 35:
+      genreArray.push(`Comedy`);
+      break;
+    case 80:
+      genreArray.push(`Crime`);
+      break;
+    case 99:
+      genreArray.push(`Documentary`);
+      break;
+    case 18:
+      genreArray.push(`Drama`);
+      break;
+    case 10751:
+      genreArray.push(`Family`);
+      break;
+    case 14:
+      genreArray.push(`Fantasy`);
+      break;
+    case 36:
+      genreArray.push(`History`);
+      break;
+    case 27:
+      genreArray.push(`Horror`);
+      break;
+    case 10402:
+      genreArray.push(`Music`);
+      break;
+    case 9648:
+      genreArray.push(`Mystery`);
+      break;
+    case 10749:
+      genreArray.push(`Romance`);
+      break;
+    case 878:
+      genreArray.push(`Science Fiction`);
+      break;
+    case 10770:
+      genreArray.push(`TV Movie`);
+      break;
+    case 53:
+      genreArray.push(`Thriller`);
+      break;
+    case 10752:
+      genreArray.push(`War`);
+      break;
+    case 37:
+      genreArray.push(`Western`);
+      break;
+    default:
+      break;
+  }
+
     }
     return genreArray.map((genre) =><div key={ genre } className="m-1">{ genre }</div>);
   };
@@ -107,22 +109,27 @@ const CardMovies = ({ moviesArray }) => {
           src={ movie.poster_path? 
             "https://image.tmdb.org/t/p/original/" + movie.poster_path : 
             "./img/poster.jpg" }
-            alt={ "L'affiche du film: " + movie.title }
+            alt={ "Movie poster: " + movie.title }
             className="img-movie img-thumbnail lazy" 
           />
           <h3 className='card-title'>
           { movie.title ?
             movie.title :
-            "Titre inconnu" }
+            "Unknown title" }
           </h3>
-          <p>
-          { movie.release_date ?
-            "Date de sortie: " + dateFormaterMovies(movie.release_date) :
-            "Date de sortie inconnue" }
-          </p>
+          
           { movie.vote_average ?
-            <p>{ movie.vote_average } / 10<span> ⭐</span></p> :
-            <p>Note inconnue</p> } 
+            <p>{ movie.vote_average.toFixed(1) } / 10<span> ⭐</span></p> :
+            <p>Unknown rating</p> }
+            <p>
+            {movie.release_date ? (
+              <span>
+                {dateFormaterMovies(movie.release_date)}
+              </span>
+            ) : (
+              "Unknown release date"
+            )}
+          </p>
         </div>
 
         <div id={ `k${movie.id}` } className="card-body collapse">
@@ -134,7 +141,7 @@ const CardMovies = ({ moviesArray }) => {
           <p className='mt-2'>
           { movie.overview ?
             movie.overview :
-            "Déscription inconnue" }
+            "Unknown description" }
           </p>
           
           <div className="d-flex justify-content-center">
@@ -142,9 +149,9 @@ const CardMovies = ({ moviesArray }) => {
             <button 
             className="btn-global btn-add mt-2"
             onClick={ () => handleSaveMovie(movie.id, movie.title, movie.vote_average) }
-            >Ajouter à la médiathèque
+            >Add to library
             </button> :
-            <span className="span-already-record">Film déja enregistré</span> }
+            <span className="span-already-record">Movie already saved</span> }
           </div>
         </div>
         <button className="btn w-100 btn-open mt-4" 

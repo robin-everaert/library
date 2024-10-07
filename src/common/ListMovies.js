@@ -15,14 +15,10 @@ const ListMovies = () => {
                 className='list-group-item d-flex justify-content-between align-items-start align-items-md-center'>
                     <div>
                         <span className='d-block'>
-                        { m.title ?
-                            "Titre " + m.title :
-                            "Titre inconnu" } 
+                        { m.title ? m.title : "Unknown title" } 
                         </span>
                         <span className='d-block mt-2'>
-                            { m.vote ?
-                                "Note: " + m.vote + " / 10" :
-                                "Note inconnue" }  
+                            { m.vote ? m.vote.toFixed(1) + " / 10 ⭐" : "Unknown rating" }
                         </span>
                     </div>
                     <button
@@ -32,7 +28,7 @@ const ListMovies = () => {
                     </button>   
                 </li>
             )) :
-            <li className='list-group-item d-flex justify-content-between align-items-center'>Aucune vidéo dans la médiathèque</li>
+            <li className='list-group-item d-flex justify-content-between align-items-center'>No videos in the media library</li>
         }
         </ul>
     );

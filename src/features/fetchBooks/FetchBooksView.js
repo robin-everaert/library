@@ -17,7 +17,7 @@ const FetchBooksView = () => {
     return (
         <main className="main main-view">
             <div className="container">
-                <h1 className='text-center pb-3'>Livres</h1>
+                <h1 className='text-center pb-3'>Books</h1>
                 <div className="row">
                     <div className="col-12 d-flex justify-content-center">
                         <div>
@@ -26,7 +26,7 @@ const FetchBooksView = () => {
                                 value={ titleBook }
                                 className="input-search"
                                 onChange={ handleChange }
-                                placeholder="Rechercher un livre"
+                                placeholder="Search for a book"
                             />
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const FetchBooksView = () => {
                 { booksSliceData.isLoading ?
                     <SpinnerLoading /> : 
                     booksSliceData.error !== '' ? 
-                        <p className="w-100 text-center msg-error mt-5">Aucun livre ne correspond à votre recherche</p> :
+                        <p className="w-100 text-center msg-error mt-5">No books match your search</p> :
                         <div className="row container-view-books mt-3 p-2 p-md-0">
                             <CardBooks booksArray={ booksSliceData.fetchedBooks } />    
                         </div> }
